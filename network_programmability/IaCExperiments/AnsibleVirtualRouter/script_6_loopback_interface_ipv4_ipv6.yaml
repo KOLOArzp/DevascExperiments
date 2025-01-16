@@ -1,0 +1,28 @@
+- name: CREATE LOOPBACK INTERFACE WITH IPv4 AND IPv6
+  hosts: iosxe_reserved
+  gather_facts: False
+  connection: local
+  become: yes
+  become_method: enable
+
+  tasks:
+    - name: Create Loopback Interface 47
+      ios_interface:
+        name: Loopback47
+        enabled: True
+        description: Loopback interface 47
+
+    - name: Configure IPv4 Address on Loopback
+      ios_l3_interface:
+        name: Loopback47
+        ipv4: 10.0.15.100/32
+
+    - name: Configure IPv6 Address 1 on Loopback
+      ios_l3_interface:
+        name: Loopback47
+        ipv6: 2001:db8:1::101/64
+
+    - name: Configure IPv6 Address 2 on Loopback
+      ios_l3_interface:
+        name: Loopback47
+        ipv6: 2001:db8:2::102/64
