@@ -3,13 +3,13 @@ from netmiko import ConnectHandler
 IP_ADDRESS = "192.168.56.101" #"Get IP Address"
 sshCli = ConnectHandler(
     device_type="cisco_ios",
-    host="10.10.20.48",
+    host="devnetsandboxiosxe.cisco.com",
     port="22",
-    username="developer",
+    username="admin",
     password="C1sco12345"
     )
 config_commands = (
-    'interface loopback 101' , 'ip address 10.1.0.101 255.255.255.0'
+    'interface loopback 10' , 'ip address 10.1.0.10S 255.255.255.0'
     )
 print("Initial Interface Config")
 output=sshCli.send_command("show ip interface brief")

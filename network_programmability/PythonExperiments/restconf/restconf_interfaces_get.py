@@ -8,8 +8,8 @@ import requests
 requests.packages.urllib3.disable_warnings()
 
 #### Step 2: Create the variables that will be the components of the request
-IP_ADDRESS = "10.10.20.48"
-RESTCONF_USERNAME = "developer"
+IP_ADDRESS = "devnetsandboxiosxe.cisco.com"
+RESTCONF_USERNAME = "admin"
 RESTCONF_PASSWORD = "C1sco12345"
 basicauth = (RESTCONF_USERNAME, RESTCONF_PASSWORD)
 api_url = f"https://{IP_ADDRESS}/restconf/data/ietf-interfaces:interfaces"

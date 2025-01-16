@@ -9,9 +9,9 @@ from netmiko import ConnectHandler
 ### EXEC
 sshCli = ConnectHandler(
     device_type="cisco_ios",
-    host="10.10.20.48",
+    host="devnetsandboxiosxe.cisco.com",
     port="22",
-    username="developer",
+    username="admin",
     password="C1sco12345"
     )
 output=sshCli.send_command("show version")
